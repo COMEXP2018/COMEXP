@@ -1,22 +1,22 @@
 |CommModem
 sys_clk => sys_clk.IN1
 reset => reset.IN1
-led_1[0] <= led_1_reg[0].DB_MAX_OUTPUT_PORT_TYPE
-led_1[1] <= led_1_reg[1].DB_MAX_OUTPUT_PORT_TYPE
-led_1[2] <= led_1_reg[2].DB_MAX_OUTPUT_PORT_TYPE
-led_1[3] <= led_1_reg[3].DB_MAX_OUTPUT_PORT_TYPE
-led_1[4] <= led_1_reg[4].DB_MAX_OUTPUT_PORT_TYPE
-led_1[5] <= led_1_reg[5].DB_MAX_OUTPUT_PORT_TYPE
-led_1[6] <= led_1_reg[6].DB_MAX_OUTPUT_PORT_TYPE
-led_1[7] <= led_1_reg[7].DB_MAX_OUTPUT_PORT_TYPE
-led_2[0] <= led_1_reg[0].DB_MAX_OUTPUT_PORT_TYPE
-led_2[1] <= led_1_reg[1].DB_MAX_OUTPUT_PORT_TYPE
-led_2[2] <= led_1_reg[2].DB_MAX_OUTPUT_PORT_TYPE
-led_2[3] <= led_1_reg[3].DB_MAX_OUTPUT_PORT_TYPE
-led_2[4] <= led_1_reg[4].DB_MAX_OUTPUT_PORT_TYPE
-led_2[5] <= led_1_reg[5].DB_MAX_OUTPUT_PORT_TYPE
-led_2[6] <= led_1_reg[6].DB_MAX_OUTPUT_PORT_TYPE
-led_2[7] <= led_1_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+DA[0] => pcmen_in[0].IN1
+DA[1] => pcmen_in[1].IN1
+DA[2] => pcmen_in[2].IN1
+DA[3] => pcmen_in[3].IN1
+DA[4] => pcmen_in[4].IN1
+DA[5] => pcmen_in[5].IN1
+DA[6] => pcmen_in[6].IN1
+DA[7] => pcmen_in[7].IN1
+DBP1[0] <= <GND>
+DBP1[1] <= <GND>
+DBP1[2] <= <GND>
+DBP1[3] <= <GND>
+DBP1[4] <= <GND>
+DBP1[5] <= <GND>
+DBP1[6] <= <GND>
+DBP1[7] <= <GND>
 
 
 |CommModem|ClkGen:cg
@@ -102,5 +102,79 @@ clk_256 <= clk_256~reg0.DB_MAX_OUTPUT_PORT_TYPE
 clk_512 <= clk_512~reg0.DB_MAX_OUTPUT_PORT_TYPE
 clk_30 <= clk_30~reg0.DB_MAX_OUTPUT_PORT_TYPE
 clk_8k <= clk_8k~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CommModem|PCMEncoder:pcmen
+in[0] => Selector0.IN5
+in[0] => Selector1.IN13
+in[0] => Selector2.IN11
+in[0] => Selector3.IN9
+in[0] => Selector4.IN7
+in[1] => Decoder0.IN5
+in[1] => Selector1.IN12
+in[1] => Selector2.IN10
+in[1] => Selector3.IN8
+in[1] => Selector4.IN6
+in[2] => Decoder0.IN4
+in[2] => Selector1.IN11
+in[2] => Selector2.IN9
+in[2] => Selector3.IN7
+in[2] => Selector4.IN5
+in[3] => Decoder0.IN3
+in[3] => Selector1.IN10
+in[3] => Selector2.IN8
+in[3] => Selector3.IN6
+in[4] => Decoder0.IN2
+in[4] => Selector1.IN9
+in[4] => Selector2.IN7
+in[5] => Decoder0.IN1
+in[5] => Selector1.IN8
+in[6] => Decoder0.IN0
+in[7] => out[7].DATAIN
+out[0] <= Selector4.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= Selector3.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= Selector2.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= Selector1.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= in[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CommModem|PCMEncoder:pcmde
+in[0] => Selector0.IN5
+in[0] => Selector1.IN13
+in[0] => Selector2.IN11
+in[0] => Selector3.IN9
+in[0] => Selector4.IN7
+in[1] => Decoder0.IN5
+in[1] => Selector1.IN12
+in[1] => Selector2.IN10
+in[1] => Selector3.IN8
+in[1] => Selector4.IN6
+in[2] => Decoder0.IN4
+in[2] => Selector1.IN11
+in[2] => Selector2.IN9
+in[2] => Selector3.IN7
+in[2] => Selector4.IN5
+in[3] => Decoder0.IN3
+in[3] => Selector1.IN10
+in[3] => Selector2.IN8
+in[3] => Selector3.IN6
+in[4] => Decoder0.IN2
+in[4] => Selector1.IN9
+in[4] => Selector2.IN7
+in[5] => Decoder0.IN1
+in[5] => Selector1.IN8
+in[6] => Decoder0.IN0
+in[7] => out[7].DATAIN
+out[0] <= Selector4.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= Selector3.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= Selector2.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= Selector1.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= in[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
