@@ -1,5 +1,5 @@
 Flow report for CommModem
-Wed Oct 10 20:18:13 2018
+Wed Nov 07 23:11:36 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Wed Oct 10 20:18:09 2018           ;
+; Flow Status                        ; Successful - Wed Nov 07 23:11:31 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; CommModem                                       ;
 ; Top-level Entity Name              ; CommModem                                       ;
 ; Family                             ; Cyclone IV E                                    ;
 ; Device                             ; EP4CE75F23C8                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 13 / 75,408 ( < 1 % )                           ;
-;     Total combinational functions  ; 12 / 75,408 ( < 1 % )                           ;
-;     Dedicated logic registers      ; 13 / 75,408 ( < 1 % )                           ;
-; Total registers                    ; 13                                              ;
+; Total logic elements               ; 0 / 75,408 ( 0 % )                              ;
+;     Total combinational functions  ; 0 / 75,408 ( 0 % )                              ;
+;     Dedicated logic registers      ; 0 / 75,408 ( 0 % )                              ;
+; Total registers                    ; 0                                               ;
 ; Total pins                         ; 18 / 293 ( 6 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 2,810,880 ( 0 % )                           ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/10/2018 20:17:47 ;
+; Start date & time ; 11/07/2018 23:11:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; CommModem           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 31573045711483.153917386710744        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 31573045711483.154160346312924        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                     ; --            ; --          ; --         ;
@@ -95,11 +95,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4627 MB             ; 00:00:02                           ;
-; Fitter                    ; 00:00:14     ; 1.9                     ; 5476 MB             ; 00:00:21                           ;
+; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4602 MB             ; 00:00:02                           ;
+; Fitter                    ; 00:00:18     ; 1.4                     ; 5418 MB             ; 00:00:25                           ;
 ; Assembler                 ; 00:00:05     ; 1.0                     ; 4586 MB             ; 00:00:05                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4689 MB             ; 00:00:03                           ;
-; Total                     ; 00:00:24     ; --                      ; --                  ; 00:00:31                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4686 MB             ; 00:00:03                           ;
+; Total                     ; 00:00:28     ; --                      ; --                  ; 00:00:35                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

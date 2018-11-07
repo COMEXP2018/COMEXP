@@ -1,5 +1,5 @@
 Assembler report for CommModem
-Wed Oct 10 20:18:09 2018
+Wed Nov 07 23:11:31 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: E:/myproject/SimpleCase/CommModem.sof
-  6. Assembler Device Options: E:/myproject/SimpleCase/CommModem.pof
+  5. Assembler Device Options: C:/Users/Luo/Documents/GitHub/COMEXP/CommModem.sof
+  6. Assembler Device Options: C:/Users/Luo/Documents/GitHub/COMEXP/CommModem.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Oct 10 20:18:09 2018 ;
+; Assembler Status      ; Successful - Wed Nov 07 23:11:31 2018 ;
 ; Revision Name         ; CommModem                             ;
 ; Top-level Entity Name ; CommModem                             ;
 ; Family                ; Cyclone IV E                          ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+---------------------------------------+
-; Assembler Generated Files             ;
-+---------------------------------------+
-; File Name                             ;
-+---------------------------------------+
-; E:/myproject/SimpleCase/CommModem.sof ;
-; E:/myproject/SimpleCase/CommModem.pof ;
-+---------------------------------------+
++----------------------------------------------------+
+; Assembler Generated Files                          ;
++----------------------------------------------------+
+; File Name                                          ;
++----------------------------------------------------+
+; C:/Users/Luo/Documents/GitHub/COMEXP/CommModem.sof ;
+; C:/Users/Luo/Documents/GitHub/COMEXP/CommModem.pof ;
++----------------------------------------------------+
 
 
-+-----------------------------------------------------------------+
-; Assembler Device Options: E:/myproject/SimpleCase/CommModem.sof ;
-+----------------+------------------------------------------------+
-; Option         ; Setting                                        ;
-+----------------+------------------------------------------------+
-; Device         ; EP4CE75F23C8                                   ;
-; JTAG usercode  ; 0x003E3B6B                                     ;
-; Checksum       ; 0x003E3B6B                                     ;
-+----------------+------------------------------------------------+
++------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Luo/Documents/GitHub/COMEXP/CommModem.sof ;
++----------------+-------------------------------------------------------------+
+; Option         ; Setting                                                     ;
++----------------+-------------------------------------------------------------+
+; Device         ; EP4CE75F23C8                                                ;
+; JTAG usercode  ; 0x003E0D61                                                  ;
+; Checksum       ; 0x003E0D61                                                  ;
++----------------+-------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------+
-; Assembler Device Options: E:/myproject/SimpleCase/CommModem.pof ;
-+--------------------+--------------------------------------------+
-; Option             ; Setting                                    ;
-+--------------------+--------------------------------------------+
-; Device             ; EPCS64                                     ;
-; JTAG usercode      ; 0x00000000                                 ;
-; Checksum           ; 0x75926B46                                 ;
-; Compression Ratio  ; 3                                          ;
-+--------------------+--------------------------------------------+
++------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Luo/Documents/GitHub/COMEXP/CommModem.pof ;
++--------------------+---------------------------------------------------------+
+; Option             ; Setting                                                 ;
++--------------------+---------------------------------------------------------+
+; Device             ; EPCS64                                                  ;
+; JTAG usercode      ; 0x00000000                                              ;
+; Checksum           ; 0x7592CFED                                              ;
+; Compression Ratio  ; 3                                                       ;
++--------------------+---------------------------------------------------------+
 
 
 +--------------------+
@@ -117,13 +117,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Oct 10 20:18:04 2018
+    Info: Processing started: Wed Nov 07 23:11:26 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off CommModem -c CommModem
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4586 megabytes
-    Info: Processing ended: Wed Oct 10 20:18:09 2018
+    Info: Processing ended: Wed Nov 07 23:11:31 2018
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 
