@@ -1,0 +1,42 @@
+module alert_256(sysclk,clk_256,reset,trans_enable,test_enable);
+  input sysclk,clk_256,reset;
+  output reg trans_enable,test_enable;
+  reg [31:0]count;
+  
+  always @(posedge sysclk or negedge reset)
+  begin
+    if(~reset)
+      begin
+      count=32'd0;
+      trans_enable=0;
+      test_enable=0;
+      end
+    else
+      begin
+        if(count==32'd128)
+          begin
+            count=count+1;
+            trans_enable=1;
+          end
+        else if(count==32'd129)
+          begin
+            count=count+1;
+            trans_enable=0;
+          end
+        else if(count==32'd144)
+          begin
+            count=count+1;
+            test_enable=1;
+          end
+        else if(count==32'd145)
+          begin
+            count=count+1;
+            test_enable=0;
+          end
+        else if(count==32'd255)
+          count=0;
+        else
+          count=count+1;
+      end
+  end
+endmodule      

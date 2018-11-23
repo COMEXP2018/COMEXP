@@ -1,0 +1,55 @@
+module zuzhen(din,dout,clk,reset,enable);
+  input din,clk,reset,enable;
+  output reg [15:0]dout;
+  reg [15:0]dout_t;
+  
+  always @(negedge clk or negedge reset)
+  begin
+    if(~reset)
+      begin
+        dout_t=0;
+        dout=0;
+      end
+    else if(enable==1)
+      begin
+        dout=dout_t;
+        dout_t[0]=dout_t[1]; 
+        dout_t[1]=dout_t[2];
+        dout_t[2]=dout_t[3];
+        dout_t[3]=dout_t[4];
+        dout_t[4]=dout_t[5];
+        dout_t[5]=dout_t[6];
+        dout_t[6]=dout_t[7];
+        dout_t[7]=dout_t[8];
+        dout_t[8]=dout_t[9];
+        dout_t[9]=dout_t[10];
+        dout_t[10]=dout_t[11];
+        dout_t[11]=dout_t[12];
+        dout_t[12]=dout_t[13];
+        dout_t[13]=dout_t[14];
+        dout_t[14]=dout_t[15];
+        dout_t[15]=din;
+      end
+    else
+      begin
+        dout_t[0]=dout_t[1]; 
+        dout_t[1]=dout_t[2];
+        dout_t[2]=dout_t[3];
+        dout_t[3]=dout_t[4];
+        dout_t[4]=dout_t[5];
+        dout_t[5]=dout_t[6];
+        dout_t[6]=dout_t[7];
+        dout_t[7]=dout_t[8];
+        dout_t[8]=dout_t[9];
+        dout_t[9]=dout_t[10];
+        dout_t[10]=dout_t[11];
+        dout_t[11]=dout_t[12];
+        dout_t[12]=dout_t[13];
+        dout_t[13]=dout_t[14];
+        dout_t[14]=dout_t[15];
+        dout_t[15]=din;
+      end
+    end
+  endmodule
+        
+      
