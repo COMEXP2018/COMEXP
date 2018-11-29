@@ -1,0 +1,16 @@
+本文件夹内所有文件都为有用文件，除了Comm_system_tb.v是测试文件。
+顶层模块Comm_system.v，输入8位的data_in与2位的输出控制信号out_select，下说明其信号流：
+ClkGen zc0，时钟分频器，一般不修改。
+PCMEncoder zc1，PCM组合逻辑模块，将8位输入data_in编码为8位输出data_for_coding。
+encoder zc2，汉明码组合逻辑模块，将8位输入data_for_coding编码为16位data_for_fsk。
+alert_256 zc3，集中产生使能信号，一般不修改。
+fsk_top_mod zc5，FSK传输模块，输入16位data_for_fsk，输出16位传输结果data_out_fsk，以及一个串行rf_sig用于观察调制信号（如果有这环节的话）。
+此模块引入257个sysclk的时延。
+decoder zc4，汉明码解码模块，输入16位data_out_fsk，解码输出8位data_out_dec。
+此模块再次引入一定的时延（懒得数了，小于128）。
+PCMDecoder zc6，PCM解码模块，输入8位data_out_dec，解码输出8位data_out_pcm。
+mux4 zc7，输出选择模块。
+当out_select为：
+00时，在输出的低8位输出pcm解码后的信号。
+01时，在输出的低8位输出pcm编码信号。
+11时，在输出的全16位输出汉明码信号。

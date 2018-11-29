@@ -1,0 +1,103 @@
+module Comm_system(data_in,data_out,reset,sysclk,out_select);
+  input [7:0]data_in;
+  input reset,sysclk;
+  input [1:0]out_select;
+  output wire [15:0]data_out;
+  wire [7:0]data_for_coding,data_out_dec,data_out_pcm;
+  wire [15:0]data_for_fsk,data_out_fsk;
+  wire rf_sig;
+  wire clk_1,clk_2,clk_4,clk_8,clk_16,clk_32,clk_64,clk_128,clk_256,clk_512,clk_30,clk_8k;
+  wire trans_enable,test_enable,dec_enable;
+  
+  ClkGen zc0
+  (
+  .sys_clk(sysclk),
+  .reset(reset),
+  .clk_1(clk_1),
+  .clk_2(clk_2),
+  .clk_4(clk_4),
+  .clk_8(clk_8),
+  .clk_16(clk_16),
+  .clk_32(clk_32),
+  .clk_64(clk_64),
+  .clk_128(clk_128),
+  .clk_256(clk_256),
+  .clk_512(clk_512),
+  .clk_30(clk_30),
+  .clk_8k(clk_8k)
+  );
+
+  PCMEncoder zc1
+  (
+  .in(data_in),
+  .out(data_for_coding)
+  );
+  
+  encoder zc2
+  (
+  .code_in(data_for_coding),
+  .code_out(data_for_fsk)
+  );
+  
+  alert_256 zc3
+  (
+  .sysclk(sysclk),
+  .clk_256(clk_256),
+  .reset(reset),
+  .trans_enable(trans_enable),
+  .test_enable(test_enable),
+  .dec_enable(dec_enable)
+  );
+  
+  
+  fsk_top_mod zc5
+  (
+  .sig_from_adc(data_for_fsk),
+  .sysclk(sysclk),
+  .reset(reset),
+  .sig_use(data_out_fsk),
+  .rf_sig(rf_sig)
+  );
+  
+  decoder zc4
+  (
+  .clk(sysclk),
+  .reset(reset), 
+  .code_in(data_out_fsk), 
+  .code_out(data_out_dec), 
+  .decode_enable(dec_enable)
+  );
+  
+  PCMDecoder zc6
+  (
+  .in(data_out_dec),
+  .out(data_out_pcm)
+  );
+  
+  mux4 zc7
+  (
+  .out_select(out_select),
+  .data_out(data_out),
+  .hamm_code(data_out_fsk),
+  .pcm_code(data_out_dec),
+  .chuan_code(data_out_pcm)
+  );
+
+endmodule
+
+module mux4(out_select,data_out,hamm_code,pcm_code,chuan_code);
+  input [1:0]out_select;
+  input [15:0]hamm_code;
+  input [7:0]pcm_code;
+  input [7:0]chuan_code;
+  output wire [15:0]data_out;
+  
+  assign data_out[7:0]=(out_select==2'b00)?chuan_code:
+                       (out_delect==2'b01)?pcm_code:
+                       (out_select==2'b11)?hamm_code[7:0]:
+                       8'b0000_0000;
+                       
+  assign data_out[15:8]=(out_select==2'b11)?hamm_code[15:8]:
+                        8'b0000_0000;
+                        
+endmodule
