@@ -1,0 +1,2 @@
+module series_to_parrel(sig_reb,clk_16,clk_256,sig_use);
+  
